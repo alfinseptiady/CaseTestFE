@@ -27,7 +27,7 @@
       return {
         form: {
         namaBarang: '',
-          harga: 0,
+        harga: 0,
         },
       };
     },

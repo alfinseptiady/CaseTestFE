@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard.vue';
 import Login from './components/Login.vue';
 import Welcome from './components/Welcome.vue';
 import TambahBarang from './components/TambahBarang.vue';
+import './style.css';
 
 const routes = [
   { path: '/', component: Welcome },
