@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto">
       <h1 class="text-2xl font-bold mt-8">Login</h1>
-      <form class="mt-4" @submit.prevent="login">
+      <form class="mt-4" @submit.prevent="created">
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username</label>
           <input v-model="masuk.username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" required>
@@ -35,20 +35,35 @@
       };
     },
     methods: {
-      login() {
-        axios
+        async created() {
+          try {
+            const response = await axios.post('http://159.223.57.121:8090/auth/login',this.masuk)
+            console.log("masuk", response)
+            localStorage.setItem('token', response.data.data.token);
+            alert("Login successful")
+            this.$router.push('/dashboard');  
+          } catch (error) {
+            console.log("error", error)
+            alert("login failed")
+          }
+        
+
+        },
+      async login() {
+        const xxx = await axios
           .post('http://159.223.57.121:8090/auth/login', this.masuk)
           .then(response => {
-            const token = response.data.token;
-            this.$router.push('/tambahbarang');      
-            localStorage.setItem('token', token);
-            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            // const token = response.data.token;
+            console.log("ssssssssss", response)
+            // localStorage.setItem('token', token);
+            // axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             alert("Login successful")
+            // this.$router.push('/dashboard');        
           })
           .catch(error => {
-            console.error(error.response.data);
-            
+            console.error(error);
           });
+          console.log("aaaa", xxx)
       },
     },
   };

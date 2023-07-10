@@ -29,7 +29,7 @@ import axios from 'axios';
 
 export default {
   data() {
-   
+ 
     return {
       daftar: {
         username: '',
@@ -41,16 +41,25 @@ export default {
   methods: {
     register() { 
       axios
-        .post('http://159.223.57.121:8090/auth/register', this.daftar)
+        .post('http://159.223.57.121:8090/auth/register', {
+          username: this.username,
+          profileName: this.profileName,
+          password: this.password
+        })
         .then(response => {
-          console.log(response.data);
-          this.$router.push('/login'); 
-          localStorage.setItem('token', token);
-          axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-          alert("Register successful")   
+          console.log(response);
+          if(response.status === 200){
+            this.$router.push('/login'); 
+          }else{
+            alert("Registration Failed");
+          } 
         })
         .catch(error => {
-          console.error(error.response.data);
+          if(error.response){
+            console.log(error.response.data);
+          }else{
+            console.log(error);
+          }
         });
     },
   },
