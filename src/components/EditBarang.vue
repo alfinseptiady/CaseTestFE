@@ -22,6 +22,22 @@
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="stok" type="text" placeholder="Stock">
             </div>
+
+            <!-- nama supplier -->
+            <!-- <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="namaSupplier">Nama Supplier</label>
+                <input v-model="formData.namaSupplier"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="namaSupplier" type="text" placeholder="namaSupplier">
+            </div> -->
+
+            <!-- alamat -->
+            <!-- <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="alamat">Alamat</label>
+                <input v-model="formData.alamat"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="alamat" type="text" placeholder="Alamat">
+            </div> -->
             <!-- Tambahkan input lain sesuai kebutuhan -->
             <div class="flex items-center justify-between">
                 <button
@@ -44,6 +60,8 @@ export default {
                 namaBarang: '',
                 harga: 0,
                 stok: 0,
+                // namaSupplier:'',
+                // alamat:'',
                 // Tambahkan properti lain sesuai kebutuhan
             },
             id: '', // Simpan ID data yang akan diupdate
@@ -94,9 +112,14 @@ export default {
                 .then(response => {
                     console.log("resssss", response.data.data)
                     const { namaBarang, harga, stok } = response.data.data;
+                    // const { namaSupplier,alamat } = response.data.data.supplier;
+
                     this.formData.namaBarang = namaBarang;
                     this.formData.harga = harga;
                     this.formData.stok = stok;
+                    // this.formData.namaSupplier = namaSupplier;
+                    // this.formData.alamat = alamat;
+
                 })
                 .catch(error => {
                     console.error(error.response.data);
@@ -106,7 +129,4 @@ export default {
 };
 </script>
   
-<style>
-/* Tambahkan gaya khusus jika diperlukan */
-</style>
   
