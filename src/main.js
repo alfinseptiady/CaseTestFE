@@ -7,14 +7,18 @@ import Dashboard from './components/Dashboard.vue';
 import Login from './components/Login.vue';
 import Welcome from './components/Welcome.vue';
 import TambahBarang from './components/TambahBarang.vue';
+import EditBarang from './components/EditBarang.vue';
 import './style.css';
 
 const routes = [
-  { path: '/', component: Welcome },
+  { path: '/Welcome', component: Welcome },
   { path: '/register', component: Register },
-  { path: '/login', component: Login },
+  { path: '/', component: Login },
   { path: '/dashboard', component: Dashboard },
   { path: '/tambahbarang', component: TambahBarang },
+  { path: '/editbarang/:id', component: EditBarang },
+
+
 
 
   
