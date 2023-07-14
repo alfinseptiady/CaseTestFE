@@ -8,6 +8,8 @@ import Login from './components/Login.vue';
 import TambahBarang from './components/TambahBarang.vue';
 import EditBarang from './components/EditBarang.vue';
 import DeleteBarang from './components/DeleteBarang.vue'; 
+
+
 import './style.css';
 
 const routes = [
