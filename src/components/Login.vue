@@ -46,7 +46,7 @@
               aria-hidden="true">&rarr;</span></a> -->
           <button class="px-4 py-1 text-sm text-black font-semibold  hover:text-blue-600 focus:blue-900 divide-blue-500">
             Sign In</button>
-          <button class="px-4 py-1 text-sm text-black font-semibold rounded-sm hover:text-blue-600 focus:blue-900 mr-40">
+          <button class="px-4 py-1 text-sm text-black font-semibold rounded-sm hover:text-blue-600 focus:blue-900 mr-40" @click="this.$router.push('/register')">
             Register
           </button>
 
@@ -124,7 +124,7 @@
           </div> -->
           </div>
           <div class="container ml-11">
-            <!-- <h1 class=" font-bold mt-1">Login</h1> -->
+            <h1 class=" font-bold mt-1">Selamat datang login akun kamu disini</h1>
             <form class="mt-0" @submit.prevent="created">
               <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username"></label>
@@ -168,7 +168,6 @@
 import { ref } from 'vue'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
-import gambar1 from '../../public/Picture.png';
 
 const navigation = [
   { name: 'Home', href: '#' },
