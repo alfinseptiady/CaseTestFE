@@ -9,7 +9,7 @@
    -->
    <div class="min-h-full">
      <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
-       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+       <div class="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
          <div class="flex h-16 items-center justify-between">
            <div class="flex items-center">
              <div class="flex-shrink-0">
@@ -93,7 +93,7 @@
          <div class="container ml-20">
      <!-- <h1 class="text-2xl font-bold mt-8 ml-11">Dashboard</h1> -->
      <button
-       class="bg-green-500 hover:bg-green-700 ml-12 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+       class="bg-green-500 hover:bg-green-700  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
        @click="this.$router.push('/tambahbarang')">
        Tambah Data
      </button>
@@ -106,29 +106,29 @@
        </li>
      </ul>
      {{ JSON.stringify(data) }} -->
-     <table class="shadow-lg bg-white mt-3 ml-12">
+     <table class="shadow-lg bg-white mt-3 ">
        <tr>
-         <th class="bg-blue-100 border px-8 py-4 text-center">ID data</th>
-         <th class="bg-blue-100 border px-8 py-4 text-center">Nama Barang</th>
-         <th class="bg-blue-100 border px-8 py-4 text-center">Harga</th>
-         <th class="bg-blue-100 border px-8 py-4 text-center">Stock</th>
-         <th class="bg-blue-100 border px-8 py-4 text-center">Nama Supplier</th>
-         <th class="bg-blue-100 border px-8 py-4 text-center">No Telp</th>
-         <th class="bg-blue-100 border px-8 py-4 text-center">Alamat</th>
-         <th class="bg-blue-100 border px-8 py-4 text-center">Actions</th>
+         <th class="bg-blue-100 border px-5 py-3 text-center">ID data</th>
+         <th class="bg-blue-100 border px-5 py-3 text-center">Nama Barang</th>
+         <th class="bg-blue-100 border px-5 py-3 text-center">Harga</th>
+         <th class="bg-blue-100 border px-5 py-3 text-center">Stock</th>
+         <th class="bg-blue-100 border px-5 py-3 text-center">Nama Supplier</th>
+         <th class="bg-blue-100 border px-5 py-3 text-center">No Telp</th>
+         <th class="bg-blue-100 border px-5 py-3 text-center">Alamat</th>
+         <th class="bg-blue-100 border px-5 py-3 text-center">Actions</th>
        </tr>
        <!-- mengdebug data apakah muncul di console -->
        {{ console.log(data.data) }}
  
        <!-- mengambil data api  -->
        <tr v-for="item in data.data" :key="item.id">
-         <td class="border px-8 py-4">{{ item.id }}</td>
-         <td class="border px-8 py-4">{{ item.namaBarang }}</td>
-         <td class="border px-8 py-4">{{ item.harga }}</td>
-         <td class="border px-8 py-4">{{ item.stok }}</td>
-         <td class="border px-8 py-4">{{ item.supplier.namaSupplier || "-" }}</td>
-         <td class="border px-8 py-4">{{ item.supplier.noTelp || "-" }}</td>
-         <td class="border px-8 py-4">{{ item.supplier.alamat || "-" }}</td>
+         <td class="border px-5 py-3">{{ item.id }}</td>
+         <td class="border px-5 py-3">{{ item.namaBarang }}</td>
+         <td class="border px-5 py-3">{{ item.harga }}</td>
+         <td class="border px-5 py-3">{{ item.stok }}</td>
+         <td class="border px-5 py-3">{{ item.supplier.namaSupplier || "-" }}</td>
+         <td class="border px-5 py-4">{{ item.supplier.noTelp || "-" }}</td>
+         <td class="border px-5 py-4">{{ item.supplier.alamat || "-" }}</td>
  
          <!--btn edit -->
          <button
@@ -205,7 +205,7 @@
    <div class="flex justify-center mt-5 mr-32">
        <button class="bg-blue-500 hover:bg-blue-700 mr-3 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
        @click="previousPage" 
-       :disabled="currentPage * data.limit >= data.total_page">
+       :disabled="currentPage === 1">
          Previous
        </button>
        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
@@ -229,7 +229,7 @@
    data() {
      return {
        data: [],
-       limit: 5,
+       limit: 10,
        offset: 1,
        currentPage: 1,
        totalItems: 0,
@@ -281,7 +281,7 @@
        this.currentPage++;
        this.offset = (this.currentPage - 1) * this.limit;
        this.getDaftarBarang();
-       if (this.currentPage * this.limit < this.totalItems) { 
+       if (this.currentPage * this.limit > this.totalItems) { 
        }
      },
  
@@ -327,8 +327,8 @@
      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
  }
  const navigation = [
-   { name: 'Daftar Barang', href: '/dashboard', current: true },
-  //  { name: 'Team', href: '#', current: false },
+   { name: 'Daftar Barang', href: '/alldatabarang', current: true },
+   { name: 'Daftar Pembayaran', href: '/alldatapembayaran', current: true },
   //  { name: 'Projects', href: '#', current: false },
   //  { name: 'Calendar', href: '#', current: false },
   //  { name: 'Reports', href: '#', current: false },
