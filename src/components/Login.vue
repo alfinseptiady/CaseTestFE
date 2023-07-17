@@ -199,7 +199,7 @@ export default {
         console.log("masuk", response)
         localStorage.setItem('token', response.data.data.token);
         alert("Login successful")
-        this.$router.push('/dashboard');
+        this.$router.push('/alldatabarang');
       } catch (error) {
         console.log("error", error)
         alert("login failed")
