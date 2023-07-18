@@ -108,15 +108,15 @@
 
             <!-- mengambil data api  -->
             <tr v-for="(item, index) in data.data" :key="item.id">
-              <td class="border px-5 py-3">{{ (currentPage - 1) * limit + index + 1 || "" }}</td>
-              <td class="border px-5 py-3">{{ item.tglBayar }}</td>
-              <td class="border px-5 py-3">Rp.{{ item.totalBayar }}</td>
-              <td class="border px-5 py-3">Rp.{{ item.transaksi.barang.harga }}</td>
-              <td class="border px-5 py-3">{{ item.transaksi.barang.namaBarang }}</td>
-              <td class="border px-5 py-3">{{ item.transaksi.barang.stok }}</td>
-              <td class="border px-5 py-3">{{ item.transaksi.barang.supplier.alamat }}</td>
-              <td class="border px-5 py-3">{{ item.transaksi.barang.supplier.namaSupplier }}</td>
-              <td class="border px-5 py-3">{{ item.transaksi.keterangan }}</td>
+              <td class="border px-5 py-3 text-center">{{ (currentPage - 1) * limit + index + 1 || "" }}</td>
+              <td class="border px-5 py-3 text-center">{{ item.tglBayar }}</td>
+              <td class="border px-5 py-3 text-center">Rp.{{ item.totalBayar }}</td>
+              <td class="border px-5 py-3 text-center">Rp.{{ item.transaksi.barang.harga }}</td>
+              <td class="border px-5 py-3 text-center">{{ item.transaksi.barang.namaBarang }}</td>
+              <td class="border px-5 py-3 text-center">{{ item.transaksi.barang.stok }}</td>
+              <td class="border px-5 py-3 text-center">{{ item.transaksi.barang.supplier.alamat }}</td>
+              <td class="border px-5 py-3 text-center">{{ item.transaksi.barang.supplier.namaSupplier }}</td>
+              <td class="border px-5 py-3 text-center">{{ item.transaksi.keterangan }}</td>
 
 
 

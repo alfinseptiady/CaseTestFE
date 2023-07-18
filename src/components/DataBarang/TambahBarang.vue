@@ -193,7 +193,7 @@
                 id="harga"
                 type="number"
                 placeholder="Harga"
-                
+                required
               />
             </div>
             <!-- stock -->
@@ -211,7 +211,7 @@
                 min="0"
                 step="1"
                 placeholder="Stock"
-                
+                required
               />
             </div>
             <div class="absolute items-center justify-between">
@@ -244,8 +244,8 @@ export default {
     return {
       form: {
         namaBarang: "",
-        harga: 0,
-        stok: 0,
+        harga: null,
+        stok: null,
       },
     };
   },
