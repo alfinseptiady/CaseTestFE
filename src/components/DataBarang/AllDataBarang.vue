@@ -123,29 +123,29 @@
        </li>
      </ul>
      {{ JSON.stringify(data) }} -->
-          <table class="shadow-lg bg-white mt-3 ">
+          <table class="shadow-lg bg-white mt-3 w-100">
             <tr>
-              <th class="bg-blue-100 border px-5 py-3 text-center">ID data</th>
-              <th class="bg-blue-100 border px-5 py-3 text-center">Nama Barang</th>
-              <th class="bg-blue-100 border px-5 py-3 text-center">Harga</th>
-              <th class="bg-blue-100 border px-5 py-3 text-center">Stock</th>
-              <th class="bg-blue-100 border px-5 py-3 text-center">Nama Supplier</th>
-              <th class="bg-blue-100 border px-5 py-3 text-center">No Telp</th>
-              <th class="bg-blue-100 border px-5 py-3 text-center">Alamat</th>
-              <th class="bg-blue-100 border px-5 py-3 text-center">Actions</th>
+              <th class="bg-blue-100 border px-8 py-4 text-center">ID data</th>
+              <th class="bg-blue-100 border px-8 py-4 text-center">Nama Barang</th>
+              <th class="bg-blue-100 border px-8 py-4 text-center">Harga</th>
+              <th class="bg-blue-100 border px-8 py-4 text-center">Stock</th>
+              <th class="bg-blue-100 border px-8 py-4 text-center">Nama Supplier</th>
+              <th class="bg-blue-100 border px-8 py-4 text-center">No Telp</th>
+              <th class="bg-blue-100 border px-8 py-4 text-center">Alamat</th>
+              <th class="bg-blue-100 border px-8 py-4 text-center">Actions</th>
             </tr>
             <!-- mengdebug data apakah muncul di console -->
             {{ console.log(data.data) }}
 
             <!-- mengambil data api  -->
             <tr v-for="item in data.data" :key="item.id">
-              <td class="border px-5 py-3">{{ item.id }}</td>
-              <td class="border px-5 py-3">{{ item.namaBarang }}</td>
-              <td class="border px-5 py-3">{{ item.harga }}</td>
-              <td class="border px-5 py-3">{{ item.stok }}</td>
-              <td class="border px-5 py-3">{{ item.supplier.namaSupplier || "-" }}</td>
-              <td class="border px-5 py-4">{{ item.supplier.noTelp || "-" }}</td>
-              <td class="border px-5 py-4">{{ item.supplier.alamat || "-" }}</td>
+              <td class="border px-5 py-3 text-center">{{ item.id }}</td>
+              <td class="border px-5 py-3 text-center">{{ item.namaBarang }}</td>
+              <td class="border px-5 py-3 text-center">{{ item.harga }}</td>
+              <td class="border px-5 py-3 text-center">{{ item.stok }}</td>
+              <td class="border px-5 py-3 text-center">{{ item.supplier.namaSupplier || "-" }}</td>
+              <td class="border px-5 py-4 text-center">{{ item.supplier.noTelp || "-" }}</td>
+              <td class="border px-5 py-4 text-center">{{ item.supplier.alamat || "-" }}</td>
 
               <!--btn edit -->
               <button
